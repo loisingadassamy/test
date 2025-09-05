@@ -1,0 +1,17 @@
+body {
+background: url("https://cdn.pixabay.com/photo/2024/03/04/14/17/ai-generated-8612487_1280.jpg") center / cover no-repeat;
+	height: 90vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+  padding: 35px 0;
+  font-size: 20px;
+}
+
+.form-container {
+	border-radius: 20px;
+}
+
+h2 {
+padding: 12px 0;
+}

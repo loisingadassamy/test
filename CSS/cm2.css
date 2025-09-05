@@ -1,0 +1,74 @@
+:root {
+    --size: min(90vmin, 600px);
+--radius: clamp(7rem, 28vmin, 12rem);
+--bg: #0b1020;
+--line: #2a3566;
+--accent: #ff8ee1;
+}
+
+
+
+* { box-sizing: border-box; }
+#cm {
+margin: 0;
+height: 100vh;
+display: grid;
+place-items: center;
+font-family: sans-serif;
+background: radial-gradient(circle at 50% 100%, #4a1a50, #0b1020);
+color: #fff;
+}
+
+
+.map {
+position: relative;
+width: var(--size);
+aspect-ratio: 1/1;
+display: grid;
+place-items: center;
+}
+
+
+
+
+.arms { position: absolute; inset: 0; }
+
+
+.arm {
+--count: 5;
+--i: 0;
+--deg: calc(360deg/var(--count) * var(--i));
+position: absolute;
+left: 50%; top: 50%;
+width: var(--radius);
+height: 2px;
+transform-origin: left center;
+transform: rotate(var(--deg));
+background: linear-gradient(90deg, transparent 15%, var(--line) 15% 100%);
+}
+
+
+.arm a.node {
+--size: clamp(6.2rem, 13vmin, 7rem);
+position: absolute;
+right: calc(-1 * var(--size) / 2);
+top: 50%; transform: translateY(-50%);
+display: grid; place-items: center;
+width: var(--size); height: var(--size);
+border-radius: 50%;
+background: #ce1cad;
+color: #fff;
+font-size: .8rem;
+text-decoration: none;
+font-weight: 600;
+box-shadow: 0 6px 15px rgba(0,0,0,.35);
+transition: transform .2s ease;
+}
+.arm a.node:hover { transform: translateY(-50%) scale(1.1); }
+
+
+@media (max-width: 500px) {
+:root { --radius: 8rem; }
+.arm a.node { font-size: .7rem; }
+}
+
